@@ -1,6 +1,11 @@
 
 let NAV_BAR = document.querySelector('header');
 let displayNavBar = `
+<style>
+   .active{
+    color: #FFB41A;
+   }
+</style>
 <nav class="bg-white border-gray-200 ">
 <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-6">
 <a href="index.html" class="flex items-center space-x-3 rtl:space-x-reverse">
@@ -10,12 +15,7 @@ let displayNavBar = `
 <form class="max-w-md mx-auto">   
 <label for="default-search" class="mb-2 text-sm font-medium text-gray-900 sr-only">Search</label>
 <div class="relative">
-    <div class="absolute inset-y-0 flex end-0 items-center ps-3 bg-inherit ">
-        <svg class="w-4 h-4 text-gray-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
-            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
-        </svg>
-    </div>
-    <input type="search" id="default-search" class="block w-full p-2  ps-4 text-sm text-gray-900 border border-gray-300 rounded-[25px] bg-gray-50  outline-none ring-none focus:ring-white" placeholder="Search..." required />
+    <input type="search" id="default-search" class="block md:w-[350px] sm:w-[400px] p-2 ps-4 text-sm text-gray-900 border border-gray-300 rounded-[25px] bg-gray-50  outline-none ring-none focus:ring-white" placeholder="Search..." required />
 </div>
 </form>
 </div>
@@ -30,20 +30,44 @@ let displayNavBar = `
 <div class="items-center  hidden w-full md:flex md:w-auto md:order-2" id="navbar-cta">
   <ul class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white ">
     <li>
-      <a href="../HTML/index.html" class="block py-2 px-3 md:p-0 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 " aria-current="page">Home</a>
+      <a href="../HTML/index.html" class="block py-2 px-3 md:p-0 text-gray-900 bg-blue-700 rounded md:bg-transparent " aria-current="page" id="page1">Home</a>
     </li>
     <li>
-      <a href="../HTML/detailPage.html" class="block py-2 px-3 md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700">Detail</a>
+      <a href="../HTML/detailPage.html" class="block py-2 px-3 md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent " id="page2">Detail</a>
     </li>
     <li>
-      <a href="../HTML/aboutus.html" class="block py-2 px-3 md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 ">About Us</a>
+      <a href="../HTML/aboutus.html" class="block py-2 px-3 md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent  " id="page3">About Us</a>
     </li>
   </ul>
 </div>
 </div>
 </nav>
 `;
+
 NAV_BAR.innerHTML = displayNavBar;
+document.addEventListener("DOMContentLoaded", function() {
+    var currentPage = window.location.pathname.split("/").pop(); // Get the current page filename
+    var navLinks = document.querySelectorAll("nav a");
+
+    // Loop through each nav link
+    navLinks.forEach(function(link) {
+        // Check if the href attribute matches the current page filename
+        if (link.getAttribute("href") === currentPage) {
+            link.classList.add("active");
+        }
+
+        // Add click event listener to each link
+        link.addEventListener("click", function(event) {
+            // Remove "active" class from all links
+            navLinks.forEach(function(link) {
+                link.classList.remove("active");
+            });
+
+            // Add "active" class to the clicked link
+            link.classList.add("active");
+        });
+    });
+});
 
 // for footer 
 let FOOTER = document.querySelector('footer');

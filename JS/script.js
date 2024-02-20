@@ -2,34 +2,38 @@
 let adsDisplay = [
     {
       title : "Advertise1",
-      image: "../image/2.png"
+      image: "../image/advertise1.png"
     },
     {
-      title : "Advertise1",
-      image: "../image/1.png"
+      title : "Advertise2",
+      image: "../image/advertise2.png"
     },
     {
-      title : "Advertise1",
-      image: "../image/1.png"
+      title : "Advertise3",
+      image: "../image/advertise3.png"
+    },
+    {
+      title : "Advertise4",
+      image: "../image/advertise4.png"
     }
 ]
 let displayAdds = document.querySelector('#displayAdvertiseCard');
 adsDisplay.map(item=>{
     displayAdds.innerHTML += `
+    <style>
+      .advertise-cards{
+        transition: transform 0.3s;
+      }
+      .advertise-cards:hover{
+        transform: scale(1.05); 
+      }
+    </style>
     <a href="#"
-    class="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row ">
-    <div
-        class="flex flex-col justify-between p-4 leading-normal">
-        <h5
-            class="mb-2 text-2xl font-bold tracking-tight text-gray-900 ">${item.title}</h5>
-        <p
-            class="mb-3 font-normal text-gray-700 dark:text-gray-400">Here
-            are the biggest enterprise technology acquisitions
-            of 2021 so far, in reverse chronological order.</p>
-    </div>
+    class="flex flex-row justify-center text-center bg-white border border-gray-200 rounded-lg shadow md:flex-row advertise-cards">
     <img
-        class="object-contain w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-s-lg"
-        src="${item.image}" alt>
+    class="object-contain mx-auto rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-s-lg"
+    src="${item.image}" alt>
+  
 </a>
     `;
 })
@@ -39,51 +43,60 @@ let productsBestSell = [
     {
         title : "Ficus elastica Robusta - Rubber Plant",
         price: 39,
-        image: "../image/2.png"
+        image: "../image/bestseller1.png"
     },
     {
         title : "Ficus elastica Robusta - Rubber Plant",
         price: 39,
-        image: "../image/2.png"
+        image: "../image/bestseller2.png"
+    },
+    {
+        title : "Calathea Orbifilio- Rubber Plant",
+        price: 39,
+        image: "../image/bestseller3.png"
+    },
+    {
+        title : "Artificial - Rubber Plant",
+        price: 39,
+        image: "../image/bestseller4.png"
     },
     {
         title : "Ficus elastica Robusta - Rubber Plant",
         price: 39,
-        image: "../image/2.png"
+        image: "../image/bestseller1.png"
     },
     {
         title : "Ficus elastica Robusta - Rubber Plant",
         price: 39,
-        image: "../image/2.png"
+        image: "../image/bestseller2.png"
     },
     {
-        title : "Ficus elastica Robusta - Rubber Plant",
+        title : "Calathea Orbifilio- Rubber Plant",
         price: 39,
-        image: "../image/2.png"
+        image: "../image/bestseller3.png"
     },
     {
-        title : "Ficus elastica Robusta - Rubber Plant",
+        title : "Artificial - Rubber Plant",
         price: 39,
-        image: "../image/2.png"
+        image: "../image/bestseller4.png"
     },
-    {
-        title : "Ficus elastica Robusta - Rubber Plant",
-        price: 39,
-        image: "../image/2.png"
-    },
-    {
-        title : "Ficus elastica Robusta - Rubber Plant",
-        price: 39,
-        image: "../image/2.png"
-    }
+   
 ]
 
 let productListBestSell = document.querySelector("#productListBestSell");
 productsBestSell.map(pro =>{
     productListBestSell.innerHTML += `
+    <style>
+    .bestseller-cards{
+      transition: transform 0.3s;
+    }
+    .bestseller-cards:hover{
+      transform: scale(1.05); 
+    }
+  </style>
     <div
-    class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow ">
-    <a href="#">
+    class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow  bestseller-cards ">
+    <a href="#" >
         <img class="p-8 rounded-t-lg"
             src="${pro.image}"
             alt="product image" />
