@@ -33,10 +33,10 @@ let displayNavBar = `
       <a href="../index.html" class="block py-2 px-3 md:p-0 text-gray-900 bg-blue-700 rounded md:bg-transparent " aria-current="page" id="page1">Home</a>
     </li>
     <li>
-      <a href="../HTML/detailPage.html" class="block py-2 px-3 md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent " id="page2">Detail</a>
+      <a href="../detailPage.html" class="block py-2 px-3 md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent " id="page2">Detail</a>
     </li>
     <li>
-      <a href="../HTML/aboutus.html" class="block py-2 px-3 md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent  " id="page3">About Us</a>
+      <a href="../aboutus.html" class="block py-2 px-3 md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent  " id="page3">About Us</a>
     </li>
   </ul>
 </div>
